@@ -21,7 +21,10 @@ exports.index = function(req, res) {
 
 	var filter = {};
 	if (req.query.search !== undefined) {
-		filter.where = ["pregunta like ?", "%" + req.query.search.split(" ").join("%") + "%"];
+		filter.where = [
+			"lower(pregunta) like ?", "%" +
+			req.query.search.split(" ").join("%").toLowerCase() + "%"
+		];
 	}
 
 	models.Quiz
