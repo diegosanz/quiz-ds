@@ -7,7 +7,8 @@ var authorController = require('../controllers/author_controller');
 // Home page
 router.get('/', function(req, res) {
 	res.render('index', {
-		title: 'Quiz'
+		title: 'Quiz',
+		errors: []
 	});
 });
 
