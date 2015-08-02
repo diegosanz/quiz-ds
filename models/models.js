@@ -31,6 +31,7 @@ var Quiz = sequelize.import(path.join(__dirname, 'quiz'));
 // exportar la definición de la tabla Quiz
 exports.Quiz = Quiz;
 
+// TODO: quitar inicialización de preguntas y mostrar que no hay quiz creados
 // sequelize.sync() crea e inicializa la tabla de preguntas en DB
 sequelize.sync().then(function() {
 	// then(..) ejecuta el manejador una vez creada la tabla
