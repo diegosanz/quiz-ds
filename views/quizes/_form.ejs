@@ -1,11 +1,20 @@
 <div>
 	<label class="rem" for="preg">Pregunta:</label>
-	<input  id="preg" name="quiz[pregunta]" type="text" value="<%= quiz.pregunta %>" placeholder="Pregunta"/>
+	<input  id="preg" name="quiz[pregunta]" placeholder="Pregunta" type="text" value="<%= quiz.pregunta %>"/>
 </div>
 <div>
 	<label class="rem" for="resp">Respuesta:</label>
-	<input  id="resp" name="quiz[respuesta]" type="text" value="<%= quiz.respuesta %>" placeholder="Respuesta"/>
+	<input  id="resp" name="quiz[respuesta]" placeholder="Respuesta" type="text" value="<%= quiz.respuesta %>"/>
+</div>
+<div>
+	<label for="tema">Tema:</label>
+	<select name="quiz[tema]" id="tema">
+		<option selected value="otro">Otro</option>
+		<option value="humanidades">Humanidades</option>
+		<option value="ocio">Ocio</option>
+		<option value="ciencia">Ciencia</option>
+		<option value="tecnologia">Tecnología</option>
+	</select>
 </div>
 <a href="/quizes">Cancelar</a>
-
 <input type="submit" value="Salvar">

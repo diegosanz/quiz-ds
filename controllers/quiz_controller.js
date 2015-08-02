@@ -18,7 +18,6 @@ exports.load = function(req, res, next, quizId) {
 
 // GET /quizes
 exports.index = function(req, res) {
-
 	var filter = {};
 	if (req.query.search !== undefined) {
 		filter.where = [
@@ -67,7 +66,8 @@ exports.answer = function(req, res) {
 exports.new = function(req, res) {
 	var quiz = models.Quiz.build({
 		pregunta: "",
-		respuesta: ""
+		respuesta: "",
+		tema: ""
 	});
 
 	res.render('quizes/new', {
@@ -82,7 +82,7 @@ exports.create = function(req, res) {
 
 	// guarda en DB los campos pregunta y respuesta de quiz
 	quiz.save({
-		fields: ["pregunta", "respuesta"]
+		fields: ["pregunta", "respuesta", "tema"]
 	}).then(function() {
 		// res.redirect: Redirección HTTP a lista de preguntas
 		res.redirect('/quizes');
@@ -118,7 +118,7 @@ exports.update = function(req, res) {
 					// save: guarda campos pregunta y respuesta en DB
 					req.quiz
 						.save({
-							fields: ["pregunta", "respuesta"]
+							fields: ['pregunta', 'respuesta', 'tema']
 						})
 						.then(function() {
 							// Redirección HTTP a lista de preguntas (URL relativo)
