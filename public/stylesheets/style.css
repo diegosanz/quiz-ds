@@ -1,34 +1,41 @@
 body {
-  margin: 0;
-  padding: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
-#page-warp{
-  margin: 2% auto;
-  color: white;
+section > div {
+	padding: 20px;
 }
-
-#page-warp > .main{
-  border: 1px solid #999;
-  padding: 1%;
-  margin-bottom: 1px;
-  color: black;
+header, nav, section, footer {
+	background: #eee;
+	text-align: center;
 }
-
-section > div{
-  padding: 20px;
+nav span {
+	margin: 0 10px 0 0;
 }
-
-header, nav, section, footer{
-  background: #eee;
-  text-align: center;
-}
-
-nav span{
-  margin: 0px 10px 0px 0px;
-}
-
 a {
-  color: #00B7FF;
+	color: #00B7FF;
+}
+.question-list {
+	margin: 1em auto;
+	border-collapse: collapse;
+}
+.question-list tr {
+	border-top: 1px solid #CCC;
+}
+.question-list tr:last-child {
+	border-bottom: 1px solid #CCC;
+}
+.question-list td{
+	padding: 0.3em;
+}
+.page-warp {
+	margin: 2% auto;
+	color: white;
+}
+.page-warp > .main {
+	border: 1px solid #999;
+	padding: 1%;
+	margin-bottom: 1px;
+	color: black;
 }

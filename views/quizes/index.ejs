@@ -2,7 +2,7 @@
 	<input  id="search" name="search" placeholder="Filtrar preguntas" type="search"/>
 	<button type="submit">Filtrar</button>
 </form>
-<table>
+<table class="question-list">
 	<% var i; for (i=0; i < quizes.length; i++) { %>
 		<tr>
 			<td>
@@ -12,6 +12,13 @@
 				<a href="quizes/<%= quizes[i].id %>/edit">
 					<button>editar</button>
 				</a>
+			</td>
+			<td>
+				<form action="quizes/<%= quizes[i].id %>?_method=delete" method="post">
+					<button onClick="return confirm('Borrar: <%= quizes[i].pregunta %>');" type="submit">
+						borrar
+					</button>
+				</form>
 			</td>
 		</tr>
 	<% } %>
