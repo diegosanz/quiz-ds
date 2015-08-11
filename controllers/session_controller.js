@@ -1,6 +1,8 @@
 // MW de autorización de accesos HTTP restringidos
 exports.loginRequired = function(req, res, next) {
+	// TODO en este if añadir que no exceda el límite de la sesión
 	if (req.session.user) {
+		// TODO añadir aquí la renovación de la hora
 		next();
 	} else {
 		res.redirect('/login');
@@ -39,13 +41,14 @@ exports.create = function(req, res) {
 		req.session.user = {
 			id: user.id,
 			username: user.username
+			// TODO aquí añadir la hora
 		};
 
 		res.redirect(req.session.redir.toString()); // redirección a path anterior a login
 	});
 };
 
-// DELETE /logout   -- Destruir sesion
+// DELETE /login   -- Destruir sesion
 exports.destroy = function(req, res) {
 	delete req.session.user;
 	res.redirect(req.session.redir.toString()); // redirect a path anterior a login
