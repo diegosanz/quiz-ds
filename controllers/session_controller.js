@@ -7,7 +7,7 @@ exports.loginRequired = function(req, res, next) {
 	}
 };
 
-// Get /login   -- Formulario de login
+// GET /login   -- Formulario de login
 exports.new = function(req, res) {
 	var errors = req.session.errors || {};
 	req.session.errors = {};
@@ -26,7 +26,8 @@ exports.create = function(req, res) {
 	var userController = require('./user_controller');
 	userController.autenticar(login, password, function(error, user) {
 
-		if (error) { // si hay error retornamos mensajes de error de sesión
+		if (error) {
+			// si hay error retornamos mensajes de error de sesión
 			req.session.errors = [{
 				"message": 'Se ha producido un error: ' + error
 			}];
