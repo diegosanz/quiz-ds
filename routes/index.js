@@ -5,6 +5,7 @@ var quizController = require('../controllers/quiz_controller');
 var commentController = require('../controllers/comment_controller');
 var authorController = require('../controllers/author_controller');
 var sessionController = require('../controllers/session_controller');
+var statisticsController = require('../controllers/statistics_controller');
 
 // Home page
 router.get('/', function(req, res) {
@@ -43,5 +44,8 @@ router.put('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish',
 
 // Author page
 router.get('/author', authorController.author);
+
+// Statistics
+router.get('/statistics', statisticsController.show);
 
 module.exports = router;

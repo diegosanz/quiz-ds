@@ -38,8 +38,6 @@ app.use(function(req, res, next) {
 		req.session.redir = req.path;
 	}
 
-	console.log("SESSION");
-	console.dir(req.session);
 	// autologout
 	var now = Date.now();
 	var sessionMaxTime = 120000; // 2 min
