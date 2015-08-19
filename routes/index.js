@@ -46,6 +46,6 @@ router.put('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish',
 router.get('/author', authorController.author);
 
 // Statistics
-router.get('/statistics', statisticsController.show);
+router.get('/quizes/statistics', statisticsController.show);
 
 module.exports = router;
